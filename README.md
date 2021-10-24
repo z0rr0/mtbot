@@ -9,16 +9,22 @@ MyTeam event notification bot.
 ## Build
 
 ```shell
-go install
+go install .
 ```
 
 ### Test
 
 ```
-go test
+go test -race -cover -v ./...
 ```
 
-Custom config file can be used from environment variable `SENDCFG`.
+### Run
+
+Config example file is config.toml
+
+```shell
+./mtbot -config $COFIG_FILE
+```
 
 ## License
 
