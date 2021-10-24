@@ -1,0 +1,35 @@
+[main]
+bot_url = "https://api.internal.myteam.mail.ru/bot/v1"
+bot_token = "sercret"
+database = "users.csv" # users CSV source file
+period = 5  # check notification period (seconds)
+debug = true  # show debug messages
+
+[limits]
+users = 2 # max users
+delays = 5 # max events per user
+# minutes
+min_delay = 1
+max_delay = 1440 # 24 hours
+
+[workers]
+user = 2   # number of user request workers
+notify = 5 # number of notification message workers
+
+[[events]]
+title = "Test1"
+url = "https://mysite"
+message = "Event every sunday at 12:30"
+weekday = 0
+time = "12h30m"
+period = "168h"  # 1 week
+timezone = "Europe/Moscow"
+
+[[events]]
+title = "Test2"
+url = "https://mysite"
+message = "Event every 2nd monday at 15:00"
+weekday = 1
+time = "15h0m"
+period = "336h"  # 2 weeks
+timezone = "Europe/Moscow"
